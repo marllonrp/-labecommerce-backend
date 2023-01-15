@@ -91,7 +91,7 @@ export const createProduct = (idIn:number, nameIn:string, priceIN:number, catego
                 result.push(newProduct)
         }
 
-       if (result!== undefined){
+       if (result !== undefined ){
         products.push(result[0])
         console.log(`Novo produto cadastrado com sucesso! Você tem um total de ${products.length} produto(s) cadastrado(s).`)
        } else {
