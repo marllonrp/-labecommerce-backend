@@ -3,22 +3,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllPurchaseFromUserID = exports.createPurshase = exports.queryProductByName = exports.getProductById = exports.getAllProducts = exports.createProduct = exports.getAllUsers = exports.createUser = exports.purchases = exports.products = exports.users = void 0;
 const types_1 = require("./types");
 exports.users = [{
-        id: 1,
+        id: "a001",
         email: "fulano@teste.com",
         password: "fulano123",
     },
     {
-        id: 2,
+        id: "a002",
         email: "ciclano@teste.com",
         password: "ciclano123",
     }];
 exports.products = [{
-        id: 1,
+        id: "p001",
         name: "Chinelo",
         price: 45,
         category: types_1.ECategorys.SHOES
     }, {
-        id: 2,
+        id: "p002",
         name: "Regata",
         price: 80,
         category: types_1.ECategorys.CLOTHES
@@ -26,13 +26,13 @@ exports.products = [{
 ];
 exports.purchases = [
     {
-        userId: 1,
-        productId: 1,
+        userId: "u001",
+        productId: "p001",
         quantity: 2,
         totalPrice: 24
     }, {
-        userId: 2,
-        productId: 2,
+        userId: "u002",
+        productId: "p002",
         quantity: 3,
         totalPrice: 45
     }

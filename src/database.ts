@@ -1,24 +1,24 @@
 import { ECategorys, TProduct, TPurchase, TUser } from "./types";
 
 export const users:TUser[] = [{
-    id:1,
+    id:"a001",
     email:"fulano@teste.com",
     password:"fulano123",
 },
 {
-    id:2,
+    id:"a002",
     email:"ciclano@teste.com",
     password:"ciclano123",
 
 }]
 
 export const products:TProduct[]=[{
-    id:1,
+    id:"p001",
     name:"Chinelo",
     price:45,
     category:ECategorys.SHOES
 },{
-    id:2,
+    id:"p002",
     name:"Regata",
     price:80,
     category:ECategorys.CLOTHES
@@ -27,19 +27,19 @@ export const products:TProduct[]=[{
 
 export const purchases:TPurchase[]=[
     {
-    userId:1,
-    productId:1,
+    userId:"u001",
+    productId:"p001",
     quantity:2,
     totalPrice:24
     },{
-        userId:2,
-    productId:2,
+        userId:"u002",
+    productId:"p002",
     quantity:3,
     totalPrice:45
     }
 ]
 
-export const createUser = (idIn:number, emailIn:string, passwordIn:string):void=>{
+export const createUser = (idIn:string, emailIn:string, passwordIn:string):void=>{
     const newUser:TUser = {
         id: idIn,
         email:emailIn,
@@ -55,7 +55,7 @@ export const getAllUsers = ():void=>{
     console.table(users)
 }
 
-export const createProduct = (idIn:number, nameIn:string, priceIN:number, categoryIn:string):void=>{
+export const createProduct = (idIn:string, nameIn:string, priceIN:number, categoryIn:string):void=>{
     const result:TProduct[] = []
     if (categoryIn === ECategorys.ACCESSORIES){
         const newProduct:TProduct = {
@@ -104,7 +104,7 @@ export const getAllProducts = ():void =>{
         console.table(products)
     }
 
-export const getProductById = (idToSearch:number):void=>{
+export const getProductById = (idToSearch:string):void=>{
    const filtred = products.filter(item=>item.id === idToSearch)
 
    filtred.length !== 0?console.table(filtred): console.log("Nenhum produto encontrado!")
@@ -119,7 +119,7 @@ export const queryProductByName =(q:string):void=>{
 }
 
 
-export const createPurshase = ( userIdIn:number, productIdIn:number, quantityIn:number, totalPriceIN:number):void=>{
+export const createPurshase = ( userIdIn:string, productIdIn:string, quantityIn:number, totalPriceIN:number):void=>{
     const newPurshase:TPurchase = {
         userId:userIdIn,
         productId:productIdIn,
@@ -131,7 +131,7 @@ export const createPurshase = ( userIdIn:number, productIdIn:number, quantityIn:
     console.log(`Compra realizada com sucesso!`)
     }
 
-export const getAllPurchaseFromUserID = (idIn:number):void=>{
+export const getAllPurchaseFromUserID = (idIn:string):void=>{
 const result = purchases.filter(item=>item.userId ===idIn)
 
 result.length !== 0?console.table (result): console.log("Nenhuma compra encontada para este ID de Usuário.")
